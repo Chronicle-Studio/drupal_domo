@@ -83,6 +83,7 @@ gulp.task('default', ['clean'], function (cb) {
 
 
 gulp.task('flatten', function () {
+  del(['../scripts/vendor'], {force: true});
   gulp.src('bower_components/**/*.min.js')
     .pipe($.flatten())
     .pipe(gulp.dest('../scripts/vendor'));
