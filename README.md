@@ -8,7 +8,7 @@ Take this theme and rename it for your own needs.
 
 Run the following commands:
 
-1. ```$ node install```
+1. ```$ npm install```
 2. ```$ bower install```
 
 Start gulping.
