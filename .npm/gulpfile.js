@@ -21,6 +21,7 @@
 
 // Include Gulp & Tools We'll Use
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
 var runSequence = require('run-sequence');
@@ -58,6 +59,7 @@ gulp.task('scss:scss', function () {
         'bower_components/normalize-scss'
       ]
     }))
+    .on('error', gutil.log)
     .pipe($.autoprefixer('last 1 version'))
     .pipe(gulp.dest('../styles'))
     .pipe($.size({title: 'styles:scss'}));

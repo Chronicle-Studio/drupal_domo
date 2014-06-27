@@ -16,6 +16,7 @@
     "gulp-size": "^0.4.0",
     "gulp-uncss": "^0.4.4",
     "gulp-useref": "^0.4.3",
+    "gulp-util": "^2.2.0",
     "jshint-stylish": "^0.2.0",
     "opn": "^0.1.1",
     "run-sequence": "^0.3.6"
