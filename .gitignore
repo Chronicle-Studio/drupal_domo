@@ -1,6 +1,6 @@
 # CSS will be compiled by the build server
 styles/*.css
-node_modules
-bower_components
+.npm/node_modules
+.npm/bower_components
 .tmp
 .sass-cache

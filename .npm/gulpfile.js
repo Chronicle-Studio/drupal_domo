@@ -27,7 +27,7 @@ var runSequence = require('run-sequence');
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('scripts/*.js')
+  return gulp.src('../scripts/*.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -36,19 +36,19 @@ gulp.task('jshint', function () {
 
 // Optimize Images
 gulp.task('images', function () {
-  return gulp.src('images/**/*')
+  return gulp.src('../images/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest('../dist/images'))
     .pipe(reload({stream: true, once: true}))
     .pipe($.size({title: 'images'}));
 });
 
 // Compile Any Other Sass Files You Added (styles)
 gulp.task('scss:scss', function () {
-  return gulp.src(['scss/**/*.scss'])
+  return gulp.src(['../scss/**/*.scss'])
     .pipe($.rubySass({
       style: 'expanded',
       precision: 10,
@@ -59,7 +59,7 @@ gulp.task('scss:scss', function () {
       ]
     }))
     .pipe($.autoprefixer('last 1 version'))
-    .pipe(gulp.dest('styles'))
+    .pipe(gulp.dest('../styles'))
     .pipe($.size({title: 'styles:scss'}));
 });
 
@@ -67,13 +67,13 @@ gulp.task('scss:scss', function () {
 gulp.task('styles', ['scss:scss']);
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['../.tmp', '../dist']));
 
 // Watch Files For Changes & Reload
 gulp.task('watch', function () {
-  gulp.watch(['scss/**/*.scss'], ['styles']);
-  gulp.watch(['scripts/*.js'], ['jshint']);
-  gulp.watch(['images/**/*'], ['images']);
+  gulp.watch(['../scss/**/*.scss'], ['styles']);
+  gulp.watch(['../scripts/*.js'], ['jshint']);
+  gulp.watch(['../images/**/*'], ['images']);
 });
 
 // Build Production Files, the Default Task
@@ -85,5 +85,5 @@ gulp.task('default', ['clean'], function (cb) {
 gulp.task('flatten', function () {
   gulp.src('bower_components/**/*.min.js')
     .pipe($.flatten())
-    .pipe(gulp.dest('scripts/vendor'));
+    .pipe(gulp.dest('../scripts/vendor'));
 });
