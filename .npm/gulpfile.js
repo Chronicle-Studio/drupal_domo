@@ -29,7 +29,6 @@ var runSequence = require('run-sequence');
 // Lint JavaScript
 gulp.task('jshint', function () {
   return gulp.src('../scripts/*.js')
-    .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'));
 });
@@ -42,7 +41,6 @@ gulp.task('images', function () {
       interlaced: true
     })))
     .pipe(gulp.dest('../dist/images'))
-    .pipe(reload({stream: true, once: true}))
     .pipe($.size({title: 'images'}));
 });
 
