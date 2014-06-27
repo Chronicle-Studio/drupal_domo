@@ -67,7 +67,7 @@ gulp.task('scss:scss', function () {
 gulp.task('styles', ['scss:scss']);
 
 // Clean Output Directory
-gulp.task('clean', del.bind(null, ['../.tmp', '../dist']));
+gulp.task('clean', del(['../.tmp', '../dist'], {force: true}));
 
 // Watch Files For Changes & Reload
 gulp.task('watch', function () {
