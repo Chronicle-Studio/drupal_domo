@@ -57,7 +57,6 @@ gulp.task('scss:scss', function () {
       ]
     }))
     .on('error', gutil.log)
-    .pipe($.autoprefixer('last 1 version'))
     .pipe(gulp.dest('../styles'))
     .pipe($.size({title: 'styles:scss'}));
 });
