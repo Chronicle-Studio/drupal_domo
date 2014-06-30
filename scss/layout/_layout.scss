@@ -1,7 +1,7 @@
 
 //  Layout
 
-.page-container {
+#page-wrapper {
   overflow: auto;
   position: relative;
   width: 100%;
@@ -9,7 +9,11 @@
   margin: 0;
 }
 
-.contain {
+#header,
+#nav,
+#breadcrumb,
+.not-front #main-wrapper,
+#footer {
   @include outer-container;
   position: relative;
   width: 95%;
