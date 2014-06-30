@@ -12,7 +12,7 @@ form {
   margin: 0 auto;
   @include clearfix;
 
-  .form-field {
+  .form-item {
     display: block;
     height: auto;
     @include clearfix;
@@ -39,7 +39,7 @@ form {
     }
   }
 
-  input[type=text], input[type=email], input[type=url], input[type=tel], textarea {
+  input.form-text, textarea {
     position: relative;
     padding: .5em 0;
     background: #fff;
@@ -75,7 +75,7 @@ form {
     }
   }
 
-  input[type=text], input[type=email], input[type=url], input[type=type] {
+  input.form-text {
     min-width: 150px;
   }
 
