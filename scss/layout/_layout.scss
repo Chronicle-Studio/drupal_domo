@@ -9,6 +9,9 @@
   margin: 0;
 }
 
+// Utility class for modular css.
+.container,
+// Drupal specific selectors so we don't have to change the markup.
 #header,
 #nav,
 #breadcrumb,
