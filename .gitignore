@@ -1,5 +1,7 @@
 # CSS will be compiled by the build server
 styles/*.css
+# dist/ contents will be compiled by the build server
+dist/
 .npm/node_modules
 .npm/bower_components
 .tmp
